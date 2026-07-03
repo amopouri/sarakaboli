@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حساب کاربری | سارا کابلی</title>
+<meta name="description" content="ورود، ثبت‌نام و داشبورد کاربری سارا کابلی — پیگیری درخواست‌های مشاوره و سفارش‌ها.">
+<meta name="theme-color" content="#0E2F76">
+<link rel="icon" type="image/png" href="Images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Markazi+Text:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<header class="site-header" id="header">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="سارا کابلی">
+      <img src="Images/logo.png" alt="سارا کابلی" width="50" height="46">
+    </a>
+    <nav class="nav-links" aria-label="ناوبری اصلی">
+      <a href="index.html#services">خدمات مهاجرت</a>
+      <a href="course.html">آموزش زبان ترکی</a>
+      <a href="index.html#about">درباره ما</a>
+      <a href="index.html#faq">سوالات پر تکرار</a>
+      <a href="index.html#contact">تماس با ما</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="acct-link authed" data-account-link href="account.html#dashboard">
+        <span class="av-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
+        <span class="lbl" data-account-label>حساب کاربری</span>
+      </a>
+      <a class="cart-link" href="cart.html" aria-label="سبد خرید">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="20" r="1.6"/><circle cx="18" cy="20" r="1.6"/><path d="M2 3h3l2.4 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L22 7H6"/></svg>
+        <span class="cart-badge" data-cart-count>۰</span>
+      </a>
+      <a class="icon-link" href="https://www.instagram.com/apply_sara" target="_blank" rel="noopener" aria-label="اینستاگرام">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <button class="burger" id="burger" aria-label="منو" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <div class="scrim" data-close></div>
+  <nav class="panel" aria-label="ناوبری موبایل">
+    <a href="index.html#services" data-close>خدمات مهاجرت</a>
+    <a href="course.html" data-close>آموزش زبان ترکی</a>
+    <a href="index.html#about" data-close>درباره ما</a>
+    <a href="index.html#faq" data-close>سوالات پر تکرار</a>
+    <a href="index.html#contact" data-close>تماس با ما</a>
+    <a href="cart.html" data-close>سبد خرید</a>
+  </nav>
+</div>
+
+<main>
+
+<section class="page-hero">
+  <div class="dots"></div>
+  <p class="crumb"><a href="index.html">خانه</a> · حساب کاربری</p>
+  <h1 id="phTitle">حساب کاربری</h1>
+  <p id="phSub">برای پیگیری درخواست‌ها و سفارش‌ها وارد شوید یا ثبت‌نام کنید.</p>
+</section>
+
+<!-- ============ AUTH ============ -->
+<section class="section auth-section" id="authSection">
+  <div class="container">
+    <div class="auth-card">
+      <div class="auth-tabs" id="authTabs">
+        <button data-tab="login" class="on">ورود</button>
+        <button data-tab="register">ثبت‌نام</button>
+      </div>
+
+      <!-- LOGIN -->
+      <div class="auth-view on" id="view-login">
+        <h2>خوش آمدید</h2>
+        <p class="muted">به حساب کاربری خود وارد شوید.</p>
+        <form id="loginForm" novalidate>
+          <div id="loginAlert"></div>
+          <div class="field"><label for="li-email">ایمیل</label><input id="li-email" type="email" placeholder="you@example.com" required></div>
+          <div class="field pw-field"><label for="li-pass">رمز عبور</label>
+            <input id="li-pass" type="password" placeholder="••••••••" required>
+            <button type="button" class="toggle" data-toggle-pw="li-pass" aria-label="نمایش رمز"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
+          </div>
+          <div style="text-align:end;margin-bottom:1rem"><button type="button" class="link-btn" data-go="forgot">رمز عبور را فراموش کرده‌اید؟</button></div>
+          <button type="submit" class="btn btn-gold btn-block btn-lg">ورود به حساب</button>
+        </form>
+        <p class="auth-foot">حساب ندارید؟ <button class="link-btn" data-go="register">ثبت‌نام کنید</button></p>
+      </div>
+
+      <!-- REGISTER -->
+      <div class="auth-view" id="view-register">
+        <h2>ساخت حساب جدید</h2>
+        <p class="muted">در چند ثانیه ثبت‌نام کنید و مسیر تحصیلی‌تان را دنبال کنید.</p>
+        <form id="registerForm" novalidate>
+          <div id="registerAlert"></div>
+          <div class="field"><label for="rg-name">نام و نام خانوادگی</label><input id="rg-name" type="text" placeholder="نام شما" required></div>
+          <div class="field-row">
+            <div class="field"><label for="rg-email">ایمیل</label><input id="rg-email" type="email" placeholder="you@example.com" required></div>
+            <div class="field"><label for="rg-phone">شماره تماس</label><input id="rg-phone" type="tel" inputmode="tel" placeholder="۰۹۱۲۳۴۵۶۷۸۹"></div>
+          </div>
+          <div class="field pw-field"><label for="rg-pass">رمز عبور</label>
+            <input id="rg-pass" type="password" placeholder="حداقل ۶ کاراکتر" required>
+            <button type="button" class="toggle" data-toggle-pw="rg-pass" aria-label="نمایش رمز"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
+          </div>
+          <div class="field"><label for="rg-pass2">تکرار رمز عبور</label><input id="rg-pass2" type="password" placeholder="••••••••" required></div>
+          <button type="submit" class="btn btn-gold btn-block btn-lg">ساخت حساب</button>
+        </form>
+        <p class="auth-foot">قبلاً ثبت‌نام کرده‌اید؟ <button class="link-btn" data-go="login">وارد شوید</button></p>
+      </div>
+
+      <!-- FORGOT -->
+      <div class="auth-view" id="view-forgot">
+        <h2>بازیابی رمز عبور</h2>
+        <p class="muted">ایمیل حساب خود را وارد کنید تا کد بازیابی برایتان ساخته شود.</p>
+        <form id="forgotForm" novalidate>
+          <div id="forgotAlert"></div>
+          <div class="field"><label for="fg-email">ایمیل</label><input id="fg-email" type="email" placeholder="you@example.com" required></div>
+          <button type="submit" class="btn btn-gold btn-block btn-lg">دریافت کد بازیابی</button>
+        </form>
+        <p class="auth-foot"><button class="link-btn" data-go="login">بازگشت به ورود</button></p>
+      </div>
+
+      <!-- RESET -->
+      <div class="auth-view" id="view-reset">
+        <h2>تعیین رمز عبور جدید</h2>
+        <p class="muted">کد بازیابی و رمز عبور جدید خود را وارد کنید.</p>
+        <form id="resetForm" novalidate>
+          <div id="resetAlert"></div>
+          <div class="field"><label for="rs-email">ایمیل</label><input id="rs-email" type="email" placeholder="you@example.com" required></div>
+          <div class="field"><label for="rs-token">کد بازیابی</label><input id="rs-token" type="text" placeholder="مثلاً A1B2C3" required></div>
+          <div class="field pw-field"><label for="rs-pass">رمز عبور جدید</label>
+            <input id="rs-pass" type="password" placeholder="حداقل ۶ کاراکتر" required>
+            <button type="button" class="toggle" data-toggle-pw="rs-pass" aria-label="نمایش رمز"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
+          </div>
+          <button type="submit" class="btn btn-gold btn-block btn-lg">تغییر رمز عبور</button>
+        </form>
+        <p class="auth-foot"><button class="link-btn" data-go="login">بازگشت به ورود</button></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DASHBOARD ============ -->
+<section class="section dash" id="dashSection" style="display:none">
+  <div class="container">
+    <div class="dash-grid">
+      <aside class="dash-side">
+        <div class="dash-user">
+          <span class="av" id="dashAvatar">س</span>
+          <div>
+            <b id="dashName">کاربر</b>
+            <span id="dashEmail">user@mail.com</span>
+          </div>
+        </div>
+        <nav class="dash-nav" id="dashNav">
+          <button data-panel="overview" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>داشبورد</button>
+          <button data-panel="requests"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>درخواست‌های مشاوره</button>
+          <button data-panel="orders"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></svg>سفارش‌های من</button>
+          <button data-panel="profile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>ویرایش پروفایل</button>
+          <button class="logout" id="logoutBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg>خروج</button>
+        </nav>
+      </aside>
+
+      <div class="dash-main">
+        <!-- OVERVIEW -->
+        <div class="dash-panel on" id="panel-overview">
+          <div class="dash-stats">
+            <div class="dash-stat"><div class="n" id="stRequests">۰</div><div class="l">درخواست مشاوره</div></div>
+            <div class="dash-stat"><div class="n" id="stOrders">۰</div><div class="l">سفارش</div></div>
+            <div class="dash-stat"><div class="n" id="stMember">—</div><div class="l">عضویت از</div></div>
+          </div>
+          <div class="dash-card">
+            <h3>آخرین درخواست‌ها</h3>
+            <div id="recentRequests"></div>
+          </div>
+        </div>
+
+        <!-- REQUESTS -->
+        <div class="dash-panel" id="panel-requests">
+          <div class="dash-card">
+            <h3>درخواست‌های مشاوره</h3>
+            <div id="requestsList"></div>
+          </div>
+        </div>
+
+        <!-- ORDERS -->
+        <div class="dash-panel" id="panel-orders">
+          <div class="dash-card">
+            <h3>سفارش‌های من</h3>
+            <div id="ordersList"></div>
+          </div>
+        </div>
+
+        <!-- PROFILE -->
+        <div class="dash-panel" id="panel-profile">
+          <div class="dash-card">
+            <h3>ویرایش پروفایل</h3>
+            <form id="profileForm" novalidate>
+              <div id="profileAlert"></div>
+              <div class="field"><label for="pf-name">نام و نام خانوادگی</label><input id="pf-name" type="text" required></div>
+              <div class="field-row">
+                <div class="field"><label for="pf-email">ایمیل</label><input id="pf-email" type="email" disabled style="opacity:.7;cursor:not-allowed"></div>
+                <div class="field"><label for="pf-phone">شماره تماس</label><input id="pf-phone" type="tel" inputmode="tel" placeholder="۰۹۱۲۳۴۵۶۷۸۹"></div>
+              </div>
+              <button type="submit" class="btn btn-gold btn-lg">ذخیره تغییرات</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <img class="flourish-bg" src="Images/flourish.png" alt="" aria-hidden="true">
+  <div class="container">
+    <div class="footer-top">
+      <div class="brand-block">
+        <img src="Images/logo.png" alt="سارا کابلی · Sara Kaboli Education">
+        <p>همراه شما در مسیر تحصیل در ترکیه و قبرس شمالی؛ از اولین مشاوره تا روز ثبت‌نام.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/apply_sara" target="_blank" rel="noopener" aria-label="اینستاگرام"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://wa.me/905352014059" target="_blank" rel="noopener" aria-label="واتساپ"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.06 24l1.7-6.2A11.86 11.86 0 1 1 12 24a11.9 11.9 0 0 1-5.7-1.46zM6.6 20.1l.36.2a9.86 9.86 0 1 0-3.34-3.3l.23.37-1 3.67z"/></svg></a>
+          <a href="tel:+905352014059" aria-label="تماس"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>دسترسی سریع</h4>
+        <a href="index.html#about">درباره سارا</a>
+        <a href="index.html#success">موفقیت دانشجویان</a>
+        <a href="universities.html">دانشگاه‌های ترکیه</a>
+        <a href="course.html">دوره زبان ترکی</a>
+        <a href="index.html#faq">سوالات متداول</a>
+      </div>
+      <div class="footer-col">
+        <h4>حساب</h4>
+        <a href="account.html#login">ورود</a>
+        <a href="account.html#register">ثبت‌نام</a>
+        <a href="cart.html">سبد خرید</a>
+        <a href="index.html#contact">فرم مشاوره</a>
+      </div>
+      <div class="footer-col">
+        <h4>تماس</h4>
+        <a href="tel:+905352014059" style="direction:ltr;text-align:start">+90 535 201 4059</a>
+        <a href="https://wa.me/905352014059" target="_blank" rel="noopener">واتساپ</a>
+        <a href="https://www.instagram.com/apply_sara" target="_blank" rel="noopener">apply_sara@</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ۲۰۲۶ سارا کابلی — تمامی حقوق محفوظ است.</p>
+      <p class="mk">Sara Kaboli Education · Türkiye &amp; North Cyprus</p>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/905352014059" target="_blank" rel="noopener" aria-label="گفت‌وگو در واتساپ">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.06 24l1.7-6.2A11.86 11.86 0 1 1 12 24a11.9 11.9 0 0 1-5.7-1.46zM6.6 20.1l.36.2a9.86 9.86 0 1 0-3.34-3.3l.23.37-1 3.67z"/><path d="M9.5 7c-.2-.45-.4-.46-.6-.47h-.5a1 1 0 0 0-.73.34A3 3 0 0 0 6.7 9.1c0 1.2.88 2.37 1 2.54s1.72 2.76 4.25 3.76c2.1.83 2.53.66 2.99.62s1.47-.6 1.68-1.18.2-1.08.14-1.18-.2-.17-.42-.29-1.47-.73-1.7-.8-.4-.12-.56.12-.64.8-.79.97-.29.18-.53.06a6.8 6.8 0 0 1-2-1.24 7.5 7.5 0 0 1-1.39-1.73c-.14-.25 0-.38.11-.5s.25-.29.37-.43a1.7 1.7 0 0 0 .25-.41.46.46 0 0 0 0-.43C9.96 8.1 9.66 7.35 9.5 7z"/></svg>
+</a>
+
+<script src="js/store.js"></script>
+<script src="js/script.js"></script>
+<script src="js/account.js"></script>
+</body>
+</html>
